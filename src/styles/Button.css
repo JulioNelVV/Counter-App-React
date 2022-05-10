@@ -1,0 +1,14 @@
+.button{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 1rem;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+    background-color: #C793FC;
+}
+.button:hover{
+    transform: scale(1.1);
+}
