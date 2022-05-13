@@ -1,15 +1,14 @@
-import { useState } from "react";
-import Button from "./Button.js";
-import Display from "./Display.js";
+
+
 import Step from "./Step.js";
 import "../styles/Counter.css"
 import useCounter from "../hooks/useCounter.js";
-function Counter({initialValue, initialStep}){
+export default function Counter({initialValue, initialStep}){
     const {
         value,
         step,
         increase,
-        decrase,
+        decrease,
         reset,
         setStepValue,
     }=useCounter(initialValue, initialStep);
@@ -22,23 +21,26 @@ function Counter({initialValue, initialStep}){
                 stepValue={step}
                 setStepValue={setStepValue}
             />
-            <Display
-                value={value}
+            <p className="display">{value}</p>
+            <input
+                type="button"
+                onClick={increase}
+                value="+"
+                className="button"
             />
-            <Button 
-                sign="+" 
-                setValue={increase}
+            <input
+                type="button"
+                onClick={decrease}
+                value="-"
+                className="button"
             />
-            <Button 
-                sign="-"
-                setValue={decrase}
-             />
-            <Button 
-                sign="⟳" 
-                setValue={reset}
+            <input
+                type="button"
+                onClick={reset}
+                value="⟳"
+                className="button"
             />
         </div>
     )
 }
 
-export default Counter;

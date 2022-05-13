@@ -3,9 +3,25 @@
 }
 .App{
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   height: 80vh;
   text-align: center;
 }
-
+.button{
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 1rem;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  background-color: #C793FC;
+  box-shadow: 3px 3px 5px 2px #8e68b4;
+}
+.button:hover{
+  transform: scale(1.1);
+  opacity: 0.8;
+}

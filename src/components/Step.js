@@ -5,7 +5,7 @@ function Step({stepValue, setStepValue}){
             <input type="number"
                 value={stepValue}
                 onChange={setStepValue}
-            ></input>
+            />
         </div>
     )
 }
