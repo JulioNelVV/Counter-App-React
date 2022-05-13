@@ -3,43 +3,40 @@ import Button from "./Button.js";
 import Display from "./Display.js";
 import Step from "./Step.js";
 import "../styles/Counter.css"
+import useCounter from "../hooks/useCounter.js";
 function Counter({initialValue, initialStep}){
-    
-    const [value, setValue]=useState(Number(initialValue));
-    const [step, setStep]=useState(Number(initialStep));
-
-    const increaseValue=(step)=>{
-        setValue(value + step);
-    }
-    const decreaseValue=(step)=>{
-        setValue(value - step);
-    }
-    const resetValue=()=>{
-        setValue(0);
-    }
-    const setStepValue=(e)=>{
-        setStep(Number(e.target.value))
-    }
+    const {
+        value,
+        step,
+        increase,
+        decrase,
+        reset,
+        setStepValue,
+    }=useCounter(initialValue, initialStep);
+   
+   
     return (    
         <div className="counter">
             <h1 className="title">Counter App</h1>
             <Step 
                 stepValue={step}
                 setStepValue={setStepValue}
-            ></Step>
-            <Display value={value}></Display>
+            />
+            <Display
+                value={value}
+            />
             <Button 
                 sign="+" 
-                setValue={()=>{increaseValue(step)}}
-            ></Button>
+                setValue={increase}
+            />
             <Button 
                 sign="-"
-                setValue={()=>decreaseValue(step)}
-             ></Button>
+                setValue={decrase}
+             />
             <Button 
                 sign="⟳" 
-                setValue={()=>{setValue(0)}}
-            ></Button>
+                setValue={reset}
+            />
         </div>
     )
 }

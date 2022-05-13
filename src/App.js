@@ -4,9 +4,9 @@ function App() {
   return (
     <div className="App">
       <Counter 
-        initialValue="23"
-        initialStep="4"
-      ></Counter>
+        initialValue={23}
+        initialStep={4}
+      />
     </div>
   );
 }
